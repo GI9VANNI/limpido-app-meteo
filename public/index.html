@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limpido - App Meteo</title>
+  <link rel="stylesheet" href="../src/styles/main.css" />
+</head>
+
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Limpido</h1>
+      <p class="muted">App Meteo</p>
+      <p>Inserisci una città per vedere il meteo attuale.</p>
+    </header>
+    <section class="card">
+      <form id="weather-form" class="weather-form" autocomplete="off">
+        <label for="city-input">Città</label>
+        <div class="weather-form__row">
+          <input id="city-input" name="city" type="text" placeholder="Es. Roma, Napoli, ecc..." minlength="2"
+            maxlength="60" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,60}$" aria-describedby="city-help" required />
+          <button type="submit">Cerca</button>
+          <button type="button" id="reset-search">Reset</button>
+        </div>
+        <small id="city-help" class="muted">Sono ammessi lettere, spazi, apostrofi e trattini.</small>
+      </form>
+    </section>
+    <section id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></section>
+    <section id="result" class="card result" aria-live="polite"></section>
+  </main>
+  <script type="module" src="../src/app.js"></script>
+</body>
+
+</html>
